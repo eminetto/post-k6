@@ -1,0 +1,36 @@
+❯ k6 run tests/stress-test.js
+
+          /\      |‾‾| /‾‾/   /‾‾/
+     /\  /  \     |  |/  /   /  /
+    /  \/    \    |     (   /   ‾‾\
+   /          \   |  |\  \ |  (‾)  |
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: tests/stress-test.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 200 max VUs, 1m20s max duration (incl. graceful stop):
+           * default: Up to 200 looping VUs for 50s over 3 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+
+     data_received..................: 914 kB 18 kB/s
+     data_sent......................: 632 kB 13 kB/s
+     http_req_blocked...............: avg=709.98µs min=1µs    med=4µs     max=590.31ms p(90)=8µs      p(95)=11µs
+     http_req_connecting............: avg=701.63µs min=0s     med=0s      max=590.23ms p(90)=0s       p(95)=0s
+     http_req_duration..............: avg=91.79ms  min=4.69ms med=54.47ms max=1.02s    p(90)=215.15ms p(95)=240.84ms
+       { expected_response:true }...: avg=91.79ms  min=4.69ms med=54.47ms max=1.02s    p(90)=215.15ms p(95)=240.84ms
+     http_req_failed................: 0.00%  ✓ 0          ✗ 7431
+     http_req_receiving.............: avg=41.07µs  min=10µs   med=36µs    max=577µs    p(90)=63µs     p(95)=82µs
+     http_req_sending...............: avg=45.08µs  min=4µs    med=14µs    max=2.6ms    p(90)=59µs     p(95)=166.49µs
+     http_req_tls_handshaking.......: avg=0s       min=0s     med=0s      max=0s       p(90)=0s       p(95)=0s
+     http_req_waiting...............: avg=91.71ms  min=4.61ms med=54.42ms max=1.02s    p(90)=215.09ms p(95)=240.79ms
+     http_reqs......................: 7431   147.939696/s
+     iteration_duration.............: avg=1.09s    min=1s     med=1.05s   max=2.03s    p(90)=1.21s    p(95)=1.24s
+     iterations.....................: 7431   147.939696/s
+     vus............................: 18     min=18       max=200
+     vus_max........................: 200    min=200      max=200
+
+
+running (0m50.2s), 000/200 VUs, 7431 complete and 0 interrupted iterations
+default ✓ [======================================] 000/200 VUs  50s
