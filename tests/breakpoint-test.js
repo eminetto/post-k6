@@ -5,7 +5,7 @@ export const options = {
     stages: [
         {
             duration: '2h',
-            target: 10000
+            target: 100000
         }
     ]
 }
